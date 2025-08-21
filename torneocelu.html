@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torneos en celular</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-image: url('/proagamea/imagenes/imagenrealcelu.png'); /* Cambiá por tu fondo */
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 0;
+      font-weight: normal;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 2rem;
+    }
+
+    .columna {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .titulo-columna {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .boton {
+      background: linear-gradient(90deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      width: 200px;
+      transition: background 0.3s ease;
+    }
+
+    .boton:hover {
+      background: linear-gradient(90deg, #2a5298, #1e3c72);
+    }
+
+    .resultado {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+
+    .resultado a {
+      color: #ffcc00;
+      text-decoration: underline;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Torneos en celular:</h1>
+  <h2>VIDEOJUEGOS DISPONIBLES PARA ESTA CATEGORÍA:</h2>
+
+  <div class="contenedor">
+    <div class="columna">
+      <div class="titulo-columna">Mañana:</div>
+      <button class="boton" onclick="mostrarURL('Stumble Guys')">Stumble Guys</button>
+      <button class="boton" onclick="mostrarURL('Clash Royale')">Clash Royale</button>
+      <button class="boton" onclick="mostrarURL('MilkChoco')">MilkChoco</button>
+      <button class="boton" onclick="mostrarURL('Fifa Mobile')">Fifa Mobile</button>
+    </div>
+    <div class="columna">
+      <div class="titulo-columna">Tarde:</div>
+      <button class="boton" onclick="mostrarURL('Brawl Stars')">Brawl Stars</button>
+      <button class="boton" onclick="mostrarURL('Free Fire')">Free Fire</button>
+      <button class="boton" onclick="mostrarURL('BombSquad')">BombSquad</button>
+    </div>
+  </div>
+
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    function mostrarURL(juego) {
+      const urls = {
+        "Stumble Guys": "https://app.doleague.com/es/championship/join/NDESJF3QzKEvy5b7xL7x",
+        "Clash Royale": "https://app.doleague.com/es/championship/join/vzCW5vqPeLDQja0WYn5g",
+        "MilkChoco": "https://app.doleague.com/es/championship/join/me9QXrzXdzJC0bAwSUYe",
+        "Fifa Mobile": "https://app.doleague.com/es/championship/join/HqH1x9RpWtLtj5lhXfsw",
+        "Brawl Stars": "https://app.doleague.com/es/championship/join/PVA2z3yVWl6DKmg1Bgm5",
+        "Free Fire": "https://app.doleague.com/es/championship/join/wesd5r7kgNeTR9xJF9Au",
+        "BombSquad": "https://app.doleague.com/es/championship/join/SmtZDhbl0WmcZag3fRT4"
+      };
+
+      const enlace = urls[juego];
+      document.getElementById("resultado").innerHTML = `
+        <p>Inscribete en <strong>${juego}</strong>:<br>
+        <a href="${enlace}" target="_blank">${enlace}</a></p>
+      `;
+    }
+  </script>
+
+</body>
+<button class="boton" onclick="window.location.replace('menu.html')">← Volver al menú</button>
+</html>

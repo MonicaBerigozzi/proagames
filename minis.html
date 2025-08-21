@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torneos en PC</title>
+  <style>
+   
+body {
+  margin: 0;
+  height: 100vh; /* importante para que ocupe toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column; /* mantiene los elementos en columna */
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  font-family: 'Arial', sans-serif;
+  background-image: url('/proagamea/imagenes/mini.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+}
+
+ 
+    h1 {
+      font-size: 3rem;
+      margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      font-weight: normal;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem;
+    }
+
+    .columna {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .boton {
+      background: linear-gradient(90deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      width: 220px;
+      transition: background 0.3s ease;
+    }
+
+
+    .boton:hover {
+      background: linear-gradient(90deg, #2a5298, #1e3c72);
+    }
+
+    .resultado {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+
+    .resultado a {
+      color: #ffcc00;
+      text-decoration: underline;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Torneos mini</h1>
+  <h2>(Categoria disponible solo para estudiantes de 5to y 6to grado)</h2>
+  <h3>VIDEOJUEGOS DISPONIBLES PARA ESTA CATEGORÍA:</h3>
+
+  <div class="contenedor">
+    <div class="columna">
+     <button class="boton" onclick="mostrarURL('Free Fire')">Free Fire</button>
+       <button class="boton" onclick="mostrarURL('Stumble Guys')">Stumble Guys</button>
+    </div>
+  </div>
+
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    function mostrarURL(modelo) {
+      const urls = {
+       "Stumble Guys": "https://app.doleague.com/es/championship/join/NDESJF3QzKEvy5b7xL7x",
+        "Free Fire": "https://app.doleague.com/es/championship/join/wesd5r7kgNeTR9xJF9Au",
+      };
+
+      const enlace = urls[modelo];
+      document.getElementById("resultado").innerHTML = `
+        <p>Inscribete en <strong>${modelo}</strong>:<br>
+        <a href="${enlace}" target="_blank">${enlace}</a></p>
+      `;
+    }
+  </script>
+
+  <button class="boton" onclick="window.location.replace('menu.html')">← Volver al menú</button>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actividades del Día</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: url('/proagamea/imagenes/imagenmenu.avif') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .opciones {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .boton {
+      background: linear-gradient(90deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-transform: none;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .boton:hover {
+      background: linear-gradient(90deg, #2a5298, #1e3c72);
+    }
+
+    .no-boton {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Actividades del día:</h1>
+  <h2>Seleccione el torneo que le interese</h2>
+
+  <div class="opciones">
+    <a href="torneocelu.html" class="boton">Torneos de videojuegos en celular</a>
+    <a href="torneopc.html" class="boton">Torneos de videojuegos en PC</a>
+     <a href="minis.html" class="boton">Torneos mini</a>
+    <div class="no-boton">Presentación de juegos propios</div>
+  </div>
+</body>
+</html>
